@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <title>Planned Maintenance</title>
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://everfi.com/">
+                <img src="https://assets.everfi-next.net/assets/logo-bab2309e55527db2a44600003216cce75fc2897ac75fe41c7af2f684725c2fc4.png"/>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-2 mobileHide">
+                <img id="gear_icon" src="gear_icon.svg" alt="Gear icon"/></div>
+            <div class="col-sm-10">
+                <h1>Planned Maintenance: <span id="date"></span></h1>
+
+                <p>This page will be offline for several hours. We expect to be back online this afternoon.</p>
+
+                <h2>Details about the upgrade</h2>
+
+                <p>Typically, we update things behind the scenes while you continue to access our site. But, today we
+                    need a
+                    little
+                    extra time and care.</p>
+
+                <a class="btn btn-default" href="https://everfi.com/"><strong>EVERFI Homepage</strong></a>
+
+                <hr/>
+                <h1>Mantenimiento programado para hoy: <span id="date_sp"></span></h1>
+
+                <p>Esta p&aacute;gina no estar&aacute; disponible por varias horas. Esperamos volver a estar en l&iacute;nea
+                    hoy por la
+                    tarde.</p>
+
+                <h2>Detalles sobre la actualizaci&oacute;n.
+                </h2>
+
+                <p>Por lo general, actualizamos las cosas detr&aacute;s del escenario mientras contin&uacute;a
+                    accediendo a
+                    nuestro sitio.
+                    Pero, hoy necesitamos un poco m&aacute;s de tiempo y cuidado.</p>
+
+                <a class="btn btn-default" href="https://everfi.com/"><strong>P&aacute;gina principal de EVERFI</strong></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="pull-left">
+        <a class="link-no-style" href="https://everfi.com/">&copy; <span id="year"></span> Everfi. All rights
+            reserved</a>
+    </div>
+</div>
+</body>
+
+<style>
+    #gear_icon {
+        padding-top: 20px;
+    }
+
+    .container {
+        font-family: 'Roboto', sans-serif !important;
+    }
+
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar-brand {
+        padding: 10px;
+    }
+
+    .navbar-brand > img {
+        height: 100%;
+        width: auto;
+    }
+
+    .footer {
+        height: 40px;
+        background: #000;
+        color: #fff;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 20px;
+        position: absolute;
+        z-index: 100;
+        border: none;
+        opacity: 0.5;
+    }
+
+    .btn {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #347777;
+    }
+
+    .link-no-style {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .link-no-style:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .mobileHide {
+        display: inline;
+    }
+
+    /* Smartphone Portrait and Landscape */
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px) {
+        .mobileHide {
+            display: none;
+        }
+    }
+
+</style>
+
+<script>
+    var date = new Date();
+    var year = date.getFullYear();
+    document.getElementById("year").innerHTML = year;
+
+    var date_en = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear();
+    var date_sp = date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear();
+
+    document.getElementById("date").innerHTML = date_en;
+    document.getElementById("date_sp").innerHTML = date_sp;
+</script>
+
+</html>
