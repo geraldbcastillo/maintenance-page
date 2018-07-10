@@ -1,9 +1,14 @@
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <!--Font-family: Roboto-->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <title>Planned Maintenance</title>
@@ -42,30 +47,27 @@
                 <hr/>
                 <h1>Mantenimiento programado para hoy: <span id="date_sp"></span></h1>
 
-                <p>Esta p&aacute;gina no estar&aacute; disponible por varias horas. Esperamos volver a estar en l&iacute;nea
-                    hoy por la
+                <p>Esta página no estará disponible por varias horas. Esperamos volver a estar en línea hoy por la
                     tarde.</p>
 
-                <h2>Detalles sobre la actualizaci&oacute;n.
+                <h2>Detalles sobre la actualización.
                 </h2>
 
-                <p>Por lo general, actualizamos las cosas detr&aacute;s del escenario mientras contin&uacute;a
-                    accediendo a
-                    nuestro sitio.
-                    Pero, hoy necesitamos un poco m&aacute;s de tiempo y cuidado.</p>
+                <p>Por lo general, actualizamos las cosas detrás del escenario mientras continúa accediendo a nuestro
+                    sitio. Pero, hoy necesitamos un poco más de tiempo y cuidado.</p>
 
-                <a class="btn btn-default" href="https://everfi.com/"><strong>P&aacute;gina principal de EVERFI</strong></a>
+                <a class="btn btn-default" href="https://everfi.com/"><strong>Página principal de EVERFI</strong></a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="footer mobileHide">
+<footer class="container-fluid mobileHide">
     <div class="pull-left">
         <a class="link-no-style" href="https://everfi.com/">&copy; <span id="year"></span> Everfi. All rights
             reserved</a>
     </div>
-</div>
+</footer>
 </body>
 
 <style>
@@ -90,7 +92,7 @@
         width: auto;
     }
 
-    .footer {
+    footer {
         height: 40px;
         background: #000;
         color: #fff;
@@ -146,8 +148,8 @@
     var year = date.getFullYear();
     document.getElementById("year").innerHTML = year;
 
-    var date_en = date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
-    var date_sp = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
+    var date_en = date.getMonth() + 1 + '-' + date.getDate() + '-' + date.getFullYear();
+    var date_sp = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
 
     document.getElementById("date").innerHTML = date_en;
     document.getElementById("date_sp").innerHTML = date_sp;
