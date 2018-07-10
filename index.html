@@ -11,7 +11,7 @@
 </head>
 <body>
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="https://everfi.com/">
                 <img src="https://assets.everfi-next.net/assets/logo-bab2309e55527db2a44600003216cce75fc2897ac75fe41c7af2f684725c2fc4.png"/>
@@ -22,10 +22,10 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            <div class="col-sm-2 mobileHide">
+        <div class="col-md-12">
+            <div class="col-md-2 mobileHide">
                 <img id="gear_icon" src="gear_icon.svg" alt="Gear icon"/></div>
-            <div class="col-sm-10">
+            <div class=" col-sm-12 col-md-10">
                 <h1>Planned Maintenance: <span id="date"></span></h1>
 
                 <p>This page will be offline for several hours. We expect to be back online this afternoon.</p>
@@ -60,7 +60,7 @@
     </div>
 </div>
 
-<div class="footer">
+<div class="footer mobileHide">
     <div class="pull-left">
         <a class="link-no-style" href="https://everfi.com/">&copy; <span id="year"></span> Everfi. All rights
             reserved</a>
@@ -131,6 +131,12 @@
         .mobileHide {
             display: none;
         }
+
+        .container {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
     }
 
 </style>
@@ -140,8 +146,8 @@
     var year = date.getFullYear();
     document.getElementById("year").innerHTML = year;
 
-    var date_en = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear();
-    var date_sp = date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear();
+    var date_en = date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
+    var date_sp = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
 
     document.getElementById("date").innerHTML = date_en;
     document.getElementById("date_sp").innerHTML = date_sp;
